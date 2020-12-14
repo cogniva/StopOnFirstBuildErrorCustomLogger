@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopOnFirstBuildErrorCustomLogger", "StopOnFirstBuildErrorCustomLogger\StopOnFirstBuildErrorCustomLogger.csproj", "{793088C3-D8DD-495D-B2B3-0B59D78C3D56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokenExampleProject", "BrokenExampleProject\BrokenExampleProject.csproj", "{E1C28DC4-F4DF-4536-875A-8AB5D808ADE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{793088C3-D8DD-495D-B2B3-0B59D78C3D56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{793088C3-D8DD-495D-B2B3-0B59D78C3D56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{793088C3-D8DD-495D-B2B3-0B59D78C3D56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{793088C3-D8DD-495D-B2B3-0B59D78C3D56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1C28DC4-F4DF-4536-875A-8AB5D808ADE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C28DC4-F4DF-4536-875A-8AB5D808ADE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C28DC4-F4DF-4536-875A-8AB5D808ADE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C28DC4-F4DF-4536-875A-8AB5D808ADE1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BEB07D4-B7CB-4B8E-8CA9-8BF67BE4BBE5}
+	EndGlobalSection
+EndGlobal

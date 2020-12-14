@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>StopOnFirstBuildErrorCustomLogger</id>
+    <version>1.0.0</version>
+    <title></title>
+    <authors>Chris C</authors>
+    <owners></owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<license type="expression">Unlicense</license>
+    <projectUrl>https://github.com/xstos/StopOnFirstBuildErrorCustomLogger.git</projectUrl>
+    <description>https://github.com/xstos/StopOnFirstBuildErrorCustomLogger.git</description>
+  </metadata>
+  <files>
+    <file src="bin\StopOnFirstBuildErrorCustomLogger.dll" target="lib" />
+    <file src="bin\StopOnFirstBuildErrorCustomLogger.pdb" target="lib" />
+  </files>
+</package>
