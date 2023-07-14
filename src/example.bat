@@ -1,8 +1,10 @@
-cd %~dp0
-SET MSBUILD="%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Professional\MSBuild\Current\bin\msbuild.exe"
-SET VSDEVCMD="%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Professional\Common7\Tools\vsdevcmd.bat"
-CALL %VSDEVCMD%
+REM Set the current working directory to the location of this batch file
+PUSHD %~dp0
 
-%msbuild% -p:Configuration=Release StopOnFirstBuildErrorCustomLogger\StopOnFirstBuildErrorCustomLogger.csproj
-%msbuild% -p:Configuration=Release BrokenExampleProject\BrokenExampleProject.csproj /logger:"StopOnFirstBuildErrorCustomLogger\bin\StopOnFirstBuildErrorCustomLogger.dll" 
-pause
+REM build the custom logger first
+dotnet build -p:Configuration=Release StopOnFirstBuildErrorCustomLogger\StopOnFirstBuildErrorCustomLogger.csproj
+
+REM use the custom logger
+dotnet build -p:Configuration=Release BrokenExampleProject\BrokenExampleProject.csproj /logger:"StopOnFirstBuildErrorCustomLogger\bin\net6.0\StopOnFirstBuildErrorCustomLogger.dll"
+
+POPD

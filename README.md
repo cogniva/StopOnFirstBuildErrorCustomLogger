@@ -2,18 +2,12 @@
 
 [https://www.nuget.org/packages/StopOnFirstBuildErrorCustomLogger/](https://www.nuget.org/packages/StopOnFirstBuildErrorCustomLogger/)
 
-Usage (example batch file):
-```
-cd %~dp0
-SET MSBUILD="%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Professional\MSBuild\Current\bin\msbuild.exe"
-SET VSDEVCMD="%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Professional\Common7\Tools\vsdevcmd.bat"
-CALL %VSDEVCMD%
+## Usage
 
-REM build the custom logger first
-%msbuild% -p:Configuration=Release StopOnFirstBuildErrorCustomLogger\StopOnFirstBuildErrorCustomLogger.csproj
+Here's the relevant part from the example batch file:
 
-REM use the custom logger
-%msbuild% -p:Configuration=Release BrokenExampleProject\BrokenExampleProject.csproj /logger:"StopOnFirstBuildErrorCustomLogger\bin\StopOnFirstBuildErrorCustomLogger.dll"
+``` bat
+dotnet build -p:Configuration=Release BrokenExampleProject\BrokenExampleProject.csproj /logger:"StopOnFirstBuildErrorCustomLogger\bin\net6.0\StopOnFirstBuildErrorCustomLogger.dll"
 ```
 
 Example output:
@@ -21,20 +15,28 @@ Example output:
 ERROR: intercepted by StopOnFirstBuildErrorCustomLogger
 ERROR DATA BEGIN:==================
 Subcategory:
-Code: CS2001
+Code: CS5001
 File: CSC
-ProjectFile: C:\repos\StopOnFirstBuildErrorCustomLogger\src\BrokenExampleProject\BrokenExampleProject.csproj
+ProjectFile: C:\dev\StopOnFirstBuildErrorCustomLogger\src\BrokenExampleProject\BrokenExampleProject.csproj
 LineNumber: 0
 ColumnNumber: 0
 EndLineNumber: 0
 EndColumnNumber: 0
 HelpLink:
-Message: Source file 'C:\repos\StopOnFirstBuildErrorCustomLogger\src\BrokenExampleProject\Properties\AssemblyInfo.cs' could not be found.
-Timestamp: 12/13/2020 11:27:42 AM
-ThreadId: 8
+Message: Program does not contain a static 'Main' method suitable for an entry point
+Timestamp: 2023-07-14 3:58:37 PM
+ThreadId: 13
 HelpKeyword:
 SenderName: Csc
-BuildEventContext: Microsoft.Build.Framework.BuildEventContext
+BuildEventContext: Node=1 Submission=1 ProjectContext=127 ProjectInstance=4 Eval=-1 Target=123 Task=72
 ERROR DATA END:====================
 StopOnFirstBuildErrorCustomLogger aborted the build
+```
+
+## Building a nuget package
+
+You can run this from the root folder of the repo:
+
+``` bat
+dotnet pack src\StopOnFirstBuildErrorCustomLogger\StopOnFirstBuildErrorCustomLogger.csproj
 ```
