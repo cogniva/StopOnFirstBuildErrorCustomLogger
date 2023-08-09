@@ -7,9 +7,11 @@
     <Authors>Chris C, Christine Salter</Authors>
     <PackageId>StopOnFirstBuildErrorCustomLogger</PackageId>
     <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/xstos/StopOnFirstBuildErrorCustomLogger.git</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/cogniva/StopOnFirstBuildErrorCustomLogger</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageTags>Library</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -17,6 +19,13 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
+  <PropertyGroup>
+    <VersionPrefix>1.0.1</VersionPrefix>
+    <RepositoryUrl>https://github.com/cogniva/StopOnFirstBuildErrorCustomLogger.git</RepositoryUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="True" PackagePath="\" />
+  </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Build.Framework" />
